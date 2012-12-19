@@ -15,6 +15,10 @@
         margin: 0 auto;
       }
 
+      #st-widget {
+        float: right;
+      }
+
       footer {
         margin-top: 1em;
         border-top: solid #c43402 1px;
@@ -30,10 +34,29 @@
           %h1 Bentoconf
           %h3 Because you're never actually going to watch them on your own.
 
-      %p
-        <b>Bentoconf</b> is a weekly online viewing party for Ruby developers and
-        their ilk.  Tune in <b>every Thursday at 12:30pm ET</b> to see a new talk
-        from a tech conference.  Then stick around for some lively discussion.
+      :plain
+        <script src='http://synchtube.com/javascripts/widget.js'>
+        </script>
+        <script>
+          new ST.Widget(
+          {
+            room: 'Bentoconf',
+            color: '#ffffff',
+            links: '#ffffff',
+            background: '#444444',
+            show_media: true,
+            rounded: true,
+            width: 200
+          })
+        </script>
+
+      :markdown
+        <b>Bentoconf</b> is a weekly online viewing party for Ruby developers
+        and their ilk.  [Tune in <b>every Thursday at 12:30pm
+        ET</b>][synchtube] to see a new talk from a tech conference.  Then
+        stick around for some lively discussion.
+
+        [synchtube]: http://synchtube.com/r/Bentoconf "Bentoconf on Synchtube"
 
       %p
         Bentoconf sessions are designed to run 60 minutes to fit into your lunch
@@ -42,14 +65,12 @@
       %p
         Pack a lunch, pull up a seat, and let's learn something.
 
-      %h3 Sounds good, I'm in!
+      %h4 Can I hear about upcoming talks? And discuss the talks with others?
 
       :markdown
-        Great!  It's not clear yet how we're going to host this thing, so sign up
-        for the mailing list for updates and discussion.
-
-        Just send a blank email to <bentoconf@librelist.com> and reply to the
-        confirmation email you get back.  [Archives are available][list-archives].
+        You sure can!  Join the Bentoconf mailing list.  Just send a blank
+        email to <bentoconf@librelist.com> and reply to the confirmation email
+        you get back.  [Archives are available][list-archives].
 
         [list-archives]: http://librelist.com/browser/bentoconf/ "Bentoconf mailing list archives"
 
