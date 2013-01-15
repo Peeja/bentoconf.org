@@ -4,6 +4,7 @@
   %head
     %title Bentoconf
     %link(href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet")
+    %script(src="http://twitterjs.googlecode.com/svn/trunk/src/twitter.min.js")
     :css
       /* Just a quick hack until we design a real layout for this page. */
       div.container {
@@ -17,6 +18,25 @@
 
       #st-widget {
         float: right;
+      }
+
+      aside#twitter > ul {
+        list-style-type: none;
+
+        margin: 0 -10px;
+        border: 1px solid #c43402;
+        padding: 9px 59px 9px 9px;
+        min-height: 34px;
+
+        background-color: #eaeaea;
+        background-image: url(/images/twitter-icon-x100.png);
+        background-size: auto 50px;
+        background-repeat: no-repeat;
+        background-position: top right 9px;
+      }
+
+      aside#twitter > ul a.twitter-permalink {
+        font-size: smaller;
       }
 
       footer {
@@ -73,6 +93,16 @@
         you get back.  [Archives are available][list-archives].
 
         [list-archives]: http://librelist.com/browser/bentoconf/ "Bentoconf mailing list archives"
+
+      %aside#twitter
+      :javascript
+        getTwitters('twitter', {
+            id: 'bentoconf',
+            clearContents: true,
+            count: 1,
+            ignoreReplies: true,
+            template: '%text% &mdash; <a class="twitter-permalink" href="http://twitter.com/%user_screen_name%/statuses/%id_str%/">[%time%]</a>'
+        });
 
       %footer
         :markdown
